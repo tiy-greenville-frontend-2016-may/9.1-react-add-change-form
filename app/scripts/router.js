@@ -59,11 +59,8 @@ var Router = Backbone.Router.extend({
     console.log('Recipe Detail');
   },
   recipeAddChange: function(id){
-    console.log('Recipe Add/Change');
-
-    var self = this;
     ReactDOM.render(
-      React.createElement(RecipeForm, {router: self, editId: id}),
+      React.createElement(RecipeForm, {router: this, editId: id}),
       document.getElementById('container')
     )
   }

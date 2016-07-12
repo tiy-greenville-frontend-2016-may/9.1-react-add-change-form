@@ -1,11 +1,16 @@
 var Backbone = require('backbone');
 
+var Ingredient = Backbone.Model.extend({
+
+});
+
+var IngredientCollection = Backbone.Collection.extend({
+  model: Ingredient
+});
+
 var Recipe = Backbone.Model.extend({
   idAttribute: 'objectId',
-  urlRoot: 'https://tiny-parse-server.herokuapp.com/classes/DansRecipes/',
-  url: function(){
-    return this.urlRoot + this.get('objectId') + '/';
-  }
+  urlRoot: 'https://tiny-parse-server.herokuapp.com/classes/DansRecipes/'
 });
 
 var RecipeCollection = Backbone.Collection.extend({
@@ -18,5 +23,6 @@ var RecipeCollection = Backbone.Collection.extend({
 
 module.exports = {
   Recipe: Recipe,
-  RecipeCollection: RecipeCollection
+  RecipeCollection: RecipeCollection,
+  IngredientCollection: IngredientCollection
 };
