@@ -1,5 +1,6 @@
 var React = require('react');
 
+var Header = require('./header.jsx');
 var models = require('../models/recipe');
 
 var IngredientForm = React.createClass({
@@ -93,28 +94,31 @@ var RecipeForm = React.createClass({
     });
 
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <h1>Add Recipe</h1>
+      <div>
+        <Header />
+        <div className="row">
+          <div className="col-md-12">
+            <h1>Add Recipe</h1>
 
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="title">Title</label>
-              <input onChange={this.handleTitleChange} value={this.state.recipe.get('title')} type="title" className="form-control" id="title" name="title" placeholder="Recipe Title" />
-            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="title">Title</label>
+                <input onChange={this.handleTitleChange} value={this.state.recipe.get('title')} type="title" className="form-control" id="title" name="title" placeholder="Recipe Title" />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="description">Description</label>
-              <input onChange={this.handleDescChange} value={this.state.recipe.get('description')} type="title" className="form-control" id="description" name="description" placeholder="Recipe Description" />
-            </div>
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <input onChange={this.handleDescChange} value={this.state.recipe.get('description')} type="title" className="form-control" id="description" name="description" placeholder="Recipe Description" />
+              </div>
 
-            <div className="form-group">
-              <button type="button" className="btn btn-success" onClick={this.addIngredient}>Add Ingredient</button>
-              {ingredientFormSet}
-            </div>
+              <div className="form-group">
+                <button type="button" className="btn btn-success" onClick={this.addIngredient}>Add Ingredient</button>
+                {ingredientFormSet}
+              </div>
 
-            <input type="submit" className="btn btn-primary" value="Add Recipe"/>
-          </form>
+              <input type="submit" className="btn btn-primary" value="Add Recipe"/>
+            </form>
+          </div>
         </div>
       </div>
     )

@@ -1,6 +1,8 @@
 var React = require('react');
 var models = require('../models/recipe');
 
+var Header = require('./header.jsx');
+
 var RecipeList = React.createClass({
   getInitialState: function(){
     return {
@@ -27,16 +29,20 @@ var RecipeList = React.createClass({
     });
 
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <h1>
-            Recipes!
-            <a href="#recipes/add/" className="btn btn-primary pull-right">Add</a>
-          </h1>
+      <div>
+        <Header />
 
-          <ul>
-            {recipeList}
-          </ul>
+        <div className="row">
+          <div className="col-md-12">
+            <h1>
+              Recipes!
+              <a href="#recipes/add/" className="btn btn-primary pull-right">Add</a>
+            </h1>
+
+            <ul>
+              {recipeList}
+            </ul>
+          </div>
         </div>
       </div>
     )
